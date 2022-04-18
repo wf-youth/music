@@ -14,23 +14,6 @@ declare module '@vue/runtime-core' {
     Sku: typeof import('./components/Sku/index.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
     ThemeMenu: typeof import('./components/ThemeMenu/index.vue')['default']
-    VanActionBar: typeof import('vant/es')['ActionBar']
-    VanActionBarButton: typeof import('vant/es')['ActionBarButton']
-    VanButton: typeof import('vant/es')['Button']
-    VanCell: typeof import('vant/es')['Cell']
-    VanConfigProvider: typeof import('vant/es')['ConfigProvider']
-    VanDivider: typeof import('vant/es')['Divider']
-    VanField: typeof import('vant/es')['Field']
-    VanIcon: typeof import('vant/es')['Icon']
-    VanImage: typeof import('vant/es')['Image']
-    VanList: typeof import('vant/es')['List']
-    VanNavBar: typeof import('vant/es')['NavBar']
-    VanPopup: typeof import('vant/es')['Popup']
-    VanSearch: typeof import('vant/es')['Search']
-    VanStepper: typeof import('vant/es')['Stepper']
-    VanSwipe: typeof import('vant/es')['Swipe']
-    VanSwipeItem: typeof import('vant/es')['SwipeItem']
-    VanSwitch: typeof import('vant/es')['Switch']
   }
 }
 
