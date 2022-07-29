@@ -6,4 +6,8 @@
 import { ref } from "vue";
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.app-container {
+  background-color: @music-theme;
+}
+</style>

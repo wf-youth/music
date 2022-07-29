@@ -4,6 +4,11 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Blimone';
-    src        : local('Blimone'), url(../src/assets/fonts/Blimone-Light.woff);
+  font-family: "Blimone";
+  src: local("Blimone"), url(../src/assets/fonts/Blimone-Light.woff);
+}
+
+:root {
+  --music-theme: #c20c0c;
+  --music-border-theme: #a40011;
 }
