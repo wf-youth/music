@@ -5,7 +5,7 @@
 import Components from "unplugin-vue-components/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import {
-  VantResolver,
+  ArcoResolver,
   VueUseComponentsResolver,
 } from "unplugin-vue-components/resolvers";
 export const AutoRegistryComponents = () => {
@@ -23,7 +23,9 @@ export const AutoRegistryComponents = () => {
       IconsResolver({
         componentPrefix: "",
       }),
-      VantResolver(),
+      ArcoResolver({
+        sideEffect: true,
+      }),
       VueUseComponentsResolver(),
     ],
   });

@@ -2,7 +2,6 @@
 import { resolve } from "path";
 import { ConfigEnv, defineConfig, loadEnv } from "vite";
 import { createVitePlugins } from "./config/vite/plugins/index";
-import vue from "@vitejs/plugin-vue";
 
 function resolvePath(path: string) {
   return resolve(__dirname, path);
@@ -10,8 +9,6 @@ function resolvePath(path: string) {
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv) => {
-  console.log(createVitePlugins, "createVitePlugins");
-
   const env = loadEnv(mode, process.cwd());
   return {
     plugins: createVitePlugins(),
