@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container"></div>
+  <div class="app-container">login</div>
 </template>
 
 <script setup lang="ts">
