@@ -2,7 +2,6 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 import { showMessage } from "./status";
 import { IResponse, ILogin, RequestOptions } from "./type";
 import { getToken, TokenPrefix } from "@/utils/auth";
-import { Toast } from "vant";
 
 // 如果请求话费了超过 `timeout` 的时间，请求将被中断
 axios.defaults.timeout = 5000;
@@ -30,7 +29,6 @@ axiosInstance.interceptors.response.use(
     } = response;
     if (status === 200) {
       if (code < 0) {
-        Toast(msg);
         return Promise.reject(msg);
       }
       return response;

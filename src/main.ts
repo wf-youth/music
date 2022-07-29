@@ -2,9 +2,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import piniaStore from "./store";
-import { Lazyload } from "vant";
 import "./index.css";
 // import 'vue-global-api'
 // 支持SVG
 import "virtual:svg-icons-register";
-createApp(App).use(router).use(piniaStore).use(Lazyload).mount("#app");
+createApp(App).use(router).use(piniaStore).mount("#app");
