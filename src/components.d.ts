@@ -5,15 +5,9 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Footer: typeof import('./components/footer/index.vue')['default']
-    GoodsList: typeof import('./components/GoodsList/index.vue')['default']
-    NavBar: typeof import('./components/NavBar/index.vue')['default']
-    RichText: typeof import('./components/RichText/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Sku: typeof import('./components/Sku/index.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
-    ThemeMenu: typeof import('./components/ThemeMenu/index.vue')['default']
   }
 }
 
