@@ -1,5 +1,7 @@
 <template>
-  <router-view></router-view>
+  <layout>
+    <router-view></router-view>
+  </layout>
 </template>
 <script setup lang="ts">
 import { useAppStore } from "./store";

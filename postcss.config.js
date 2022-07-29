@@ -6,7 +6,7 @@ module.exports = {
       // 需要转换的单位，默认为 px
       unitToConvert: "px",
       // 视窗的宽度，对应的是我们设计稿的宽度
-      viewportWidth: 375,
+      viewportWidth: 1912,
       // 指定 px 转换为视窗单位值的小数位数（很多时候无法整除）
       unitPrecision: 3,
       // 能转化为 vw 的属性列表
