@@ -25,7 +25,5 @@ export function createVitePlugins() {
     StyleImportPlugin(),
   ];
 
-  console.log(vitePlugins, "vitePlugins");
-
   return vitePlugins;
 }

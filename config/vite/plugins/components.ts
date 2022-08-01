@@ -20,9 +20,9 @@ export const AutoRegistryComponents = () => {
     include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
     exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
     resolvers: [
-      IconsResolver({
-        componentPrefix: "",
-      }),
+      // IconsResolver({
+      //   componentPrefix: "",
+      // }),
       ArcoResolver({
         sideEffect: true,
       }),
