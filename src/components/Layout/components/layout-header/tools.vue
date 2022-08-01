@@ -1,9 +1,11 @@
 <template>
-  <div class="tools">
-    <a-space size="large">
+  <div class="tools ml-8">
+    <a-space size="medium" class="flex items-center">
+      <icon-sun-fill :style="{ fontSize: '20px' }" />
       <icon-settings :style="{ fontSize: '20px' }" />
       <icon-skin :style="{ fontSize: '20px' }" />
-      <svg-icon name="svg-xinfeng" color="#ffffff" size="small" />
+      <icon-email :style="{ fontSize: '20px' }" />
+      <icon-copy :style="{ fontSize: '20px' }" />
     </a-space>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <svg aria-hidden="true" class="svg-icon-spin" :class="calsses">
-    <use :xlink:href="symbolId" fill="#ffffff" />
+    <use :xlink:href="symbolId" :fill="color" />
   </svg>
 </template>
 
@@ -16,7 +16,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: "#ffffff",
+    default: "#333",
   },
   size: {
     type: String,
@@ -31,7 +31,7 @@ const calsses = computed(() => {
 });
 const fontSize = reactive({
   default: "54px",
-  small: "22px",
+  small: "20px",
   large: "48px",
   xl: "54px",
 });
@@ -40,9 +40,9 @@ const fontSize = reactive({
 .svg-icon-spin {
   width: v-bind("fontSize.default");
   height: v-bind("fontSize.default");
-  fill: #ffffff;
+  fill: v-bind(color);
   vertical-align: middle;
-  color: #ffffff;
+  color: v-bind(color);
   &.sdms-size-small {
     font-size: v-bind("fontSize.small");
     height: v-bind("fontSize.small");

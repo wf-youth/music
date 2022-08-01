@@ -4,7 +4,10 @@
       <logo />
       <back-button class="mr-3" />
     </div>
-    <div class="search-box">
+
+    <div class="tabs-box">tabs</div>
+
+    <div class="search-box flex items-center">
       <search />
       <tools />
     </div>
@@ -20,6 +23,9 @@ import tools from "./tools.vue";
 </script>
 
 <style lang="less" scoped>
+.tabs-box {
+  flex: 1;
+}
 .header {
   background-color: @arcoblue-6;
   color: @music-text;
