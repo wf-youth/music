@@ -1,7 +1,18 @@
 <template>
   <div class="layout">
-    <layout-header></layout-header>
-    <slot></slot>
+    <a-layout style="height: 100vh">
+      <a-layout-header> <layout-header></layout-header></a-layout-header>
+      <a-layout>
+        <a-layout-sider
+          theme="light"
+          :style="{ '--color-menu-light-bg': '#ededed' }"
+        >
+          Sider
+        </a-layout-sider>
+        <a-layout-content> <slot></slot></a-layout-content>
+      </a-layout>
+      <a-layout-footer>Footer</a-layout-footer>
+    </a-layout>
   </div>
 </template>
 
