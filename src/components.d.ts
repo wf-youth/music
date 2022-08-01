@@ -8,14 +8,18 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AButton: typeof import("@arco-design/web-vue")["Button"]
+    AInputSearch: typeof import('@arco-design/web-vue')['InputSearch']
     ASpace: typeof import('@arco-design/web-vue')['Space']
     BackButton: typeof import('./components/Layout/components/layout-header/BackButton.vue')['default']
     Header: typeof import("./components/Layout/components/header/index.vue")["default"]
+    Iconfont: typeof import('./components/Iconfont/index.vue')['default']
     Layout: typeof import('./components/Layout/index.vue')['default']
     LayoutHeader: typeof import('./components/Layout/components/layout-header/index.vue')['default']
     Logo: typeof import('./components/Layout/components/layout-header/Logo.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Search: typeof import('./components/Layout/components/layout-header/search.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
+    Tools: typeof import('./components/Layout/components/layout-header/tools.vue')['default']
   }
 }

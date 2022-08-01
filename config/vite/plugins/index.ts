@@ -10,7 +10,9 @@ import { StyleImportPlugin } from "./styleImport";
 export function createVitePlugins() {
   const vitePlugins: (Plugin | Plugin[])[] = [
     // vue支持
-    vue(),
+    vue({
+      reactivityTransform: true,
+    }),
     // svg
     createSvgIcon(),
     // // 自动按需引入组件

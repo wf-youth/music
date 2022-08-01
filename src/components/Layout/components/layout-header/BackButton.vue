@@ -1,8 +1,8 @@
 <template>
   <div class="back-button">
     <a-space size="mini" class="flex items-center">
-      <icon-left-circle :style="{ fontSize: '24px' }" @click="handleBack" />
-      <icon-right-circle :style="{ fontSize: '24px' }" @click="handleForward" />
+      <icon-left :style="{ fontSize: '24px' }" @click="handleBack" />
+      <icon-right :style="{ fontSize: '24px' }" @click="handleForward" />
     </a-space>
   </div>
 </template>
