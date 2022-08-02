@@ -5,6 +5,7 @@
       <a-progress
         :percent="0.2"
         :show-text="false"
+        :stroke-width="2"
         style="color: var(--music-theme)"
       />
     </div>
