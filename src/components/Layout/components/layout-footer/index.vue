@@ -13,7 +13,7 @@
           src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
         />
         <!-- 名称 -->
-        <div class="pl-2 flex flex-col justify-between">
+        <div class="pl-2 flex flex-col justify-between py-1">
           <!-- 音乐名称 - 歌手名称 -->
           <div>
             <span>有点甜 </span
@@ -27,7 +27,9 @@
           </div>
         </div>
       </div>
-      <div>播放操作</div>
+      <div>
+        <like theme="outline" size="28" fill="#333" :strokeWidth="1" />
+      </div>
       <div>声音操作</div>
     </div>
     <!-- 哎嘿嘿 这是底部 -->
@@ -36,6 +38,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { Like } from "@icon-park/vue-next";
 </script>
 
 <style lang="less" scoped></style>
