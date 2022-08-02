@@ -7,7 +7,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AButton: typeof import("@arco-design/web-vue")["Button"]
     AInputSearch: typeof import('@arco-design/web-vue')['InputSearch']
     ALayout: typeof import('@arco-design/web-vue')['Layout']
     ALayoutContent: typeof import('@arco-design/web-vue')['LayoutContent']
@@ -17,7 +16,6 @@ declare module '@vue/runtime-core' {
     AProgress: typeof import('@arco-design/web-vue')['Progress']
     ASpace: typeof import('@arco-design/web-vue')['Space']
     BackButton: typeof import('./components/Layout/components/layout-header/BackButton.vue')['default']
-    Header: typeof import("./components/Layout/components/header/index.vue")["default"]
     Iconfont: typeof import('./components/Iconfont/index.vue')['default']
     Layout: typeof import('./components/Layout/index.vue')['default']
     LayoutFooter: typeof import('./components/Layout/components/layout-footer/index.vue')['default']

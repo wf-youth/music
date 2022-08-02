@@ -3,10 +3,7 @@
     <a-layout style="height: 100vh">
       <a-layout-header> <layout-header></layout-header></a-layout-header>
       <a-layout>
-        <a-layout-sider
-          theme="light"
-          :style="{ '--color-menu-light-bg': '#ededed' }"
-        >
+        <a-layout-sider :style="{ '--color-menu-light-bg': '#ededed' }">
           Sider
         </a-layout-sider>
         <a-layout-content> <slot></slot></a-layout-content>
