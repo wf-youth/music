@@ -26,5 +26,6 @@ declare module '@vue/runtime-core' {
     Search: typeof import('./components/Layout/components/layout-header/search.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
     Tools: typeof import('./components/Layout/components/layout-header/tools.vue')['default']
+    Undefined: typeof import('./components/Iconfont/index.vue')['default']
   }
 }
