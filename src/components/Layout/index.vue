@@ -4,7 +4,7 @@
       <a-layout-header> <layout-header></layout-header></a-layout-header>
       <a-layout>
         <a-layout-sider :style="{ '--color-menu-light-bg': '#ededed' }">
-          Sider
+          <layout-sider />
         </a-layout-sider>
         <a-layout-content> <slot></slot></a-layout-content>
       </a-layout>
@@ -16,10 +16,9 @@
 </template>
 
 <script setup lang="ts">
-import { LayoutHeader } from "./components/index";
+import { LayoutHeader, LayoutFooter } from "./components/index";
 import { ref } from "vue";
 // 底部组件引入
-import layoutFooter from "./components/layout-footer/index.vue";
 </script>
 
 <style lang="less" scoped></style>

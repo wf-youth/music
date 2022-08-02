@@ -29,7 +29,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         less: {
           javascriptEnabled: true,
           modifyVars: {
-            "arcoblue-6": "#c20c0c",
+            "arcoblue-6": "#c24437",
           },
           // 这样就能全局使用 src/assets/styles/base.less 定义的 变量
           additionalData: `@import "${resolvePath(
