@@ -1,5 +1,7 @@
 <template>
   <div class="layout-sider p-3">
+    <login />
+
     <div class="menus text-sm">
       <div class="menus-item" v-for="item in routes" :key="item.path">
         <div
@@ -13,6 +15,7 @@
           v-for="child in item.children"
           :key="child.path"
           :to="child.path"
+          active-class="active-class"
         >
           <div class="flex items-center my-2">
             <icon-park
@@ -38,4 +41,8 @@ import { routes } from "@/router/modules/index";
 import IconPark from "@/components/IconPark/index.vue";
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.active-class {
+  color: @music-theme;
+}
+</style>

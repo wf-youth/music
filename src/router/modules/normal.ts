@@ -10,7 +10,7 @@ const normalRoutes = {
       component: () => import("../../pages/DiscoverMusic/index.vue"),
       meta: {
         title: "发现音乐",
-        icon: "Github",
+        icon: "Music",
       },
     },
   ],

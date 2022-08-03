@@ -23,6 +23,7 @@ declare module '@vue/runtime-core' {
     LayoutFooter: typeof import('./components/Layout/components/layout-footer/index.vue')['default']
     LayoutHeader: typeof import('./components/Layout/components/layout-header/index.vue')['default']
     LayoutSider: typeof import('./components/Layout/components/layout-sider/index.vue')['default']
+    Login: typeof import('./components/Layout/components/layout-sider/Login.vue')['default']
     Logo: typeof import('./components/Layout/components/layout-header/Logo.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
