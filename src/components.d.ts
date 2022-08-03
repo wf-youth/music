@@ -17,6 +17,7 @@ declare module '@vue/runtime-core' {
     ASpace: typeof import('@arco-design/web-vue')['Space']
     BackButton: typeof import('./components/Layout/components/layout-header/BackButton.vue')['default']
     Iconfont: typeof import('./components/Iconfont/index.vue')['default']
+    IconPark: typeof import("./components/IconPark/index.ts")["default"]
     Layout: typeof import('./components/Layout/index.vue')['default']
     LayoutFooter: typeof import('./components/Layout/components/layout-footer/index.vue')['default']
     LayoutHeader: typeof import('./components/Layout/components/layout-header/index.vue')['default']
