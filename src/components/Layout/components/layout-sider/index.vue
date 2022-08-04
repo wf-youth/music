@@ -6,28 +6,20 @@
       <div class="menus-item" v-for="item in routes" :key="item.path">
         <div
           class="cate-name text-xs mt-5"
-          v-if="item.meta && item.meta.title"
+          v-if="item.meta && item.meta.cateName"
           :style="{ color: 'var(--color-text-3)' }"
         >
-          {{ item.meta.title }}
+          {{ item.meta.cateName }}
         </div>
-        <router-link
-          v-for="child in item.children"
-          :key="child.path"
-          :to="child.path"
-          active-class="active-class"
-        >
+        <router-link :to="item.path" active-class="active-class">
           <div class="flex items-center my-2">
             <icon-park
-              :name="child.meta.icon"
-              v-if="child.meta && child.meta.icon"
+              :name="item.meta.icon"
+              v-if="item.meta && item.meta.icon"
               class="mr-1"
             />
-            <div
-              v-if="child.meta && child.meta.title"
-              class="cate-name text-sm"
-            >
-              {{ child.meta.title }}
+            <div v-if="item.meta && item.meta.title" class="cate-name text-sm">
+              {{ item.meta.title }}
             </div>
           </div>
         </router-link>

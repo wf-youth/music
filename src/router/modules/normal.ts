@@ -1,16 +1,27 @@
 const DiscoverMusic = () => import("../../pages/login/index.vue");
 const normalRoutes = {
-  path: "/",
-  redirect: "/DiscoverMusic",
-
+  path: "/discoverMusic",
+  name: "discoverMusic",
+  redirect: "/discoverMusic/recommend",
+  meta: {
+    title: "发现音乐",
+    icon: "Music",
+  },
   children: [
     {
-      path: "/DiscoverMusic",
-      name: "DiscoverMusic",
-      component: () => import("../../pages/DiscoverMusic/index.vue"),
+      path: "/discoverMusic/recommend",
+      name: "recommend",
+      component: () => import("../../pages/DiscoverMusic/recommend/index.vue"),
       meta: {
-        title: "发现音乐",
-        icon: "Music",
+        title: "个性推荐",
+      },
+    },
+    {
+      path: "/discoverMusic/playList",
+      name: "playList",
+      component: () => import("../../pages/DiscoverMusic/playList/index.vue"),
+      meta: {
+        title: "歌单",
       },
     },
   ],

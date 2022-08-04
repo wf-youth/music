@@ -9,9 +9,13 @@ interface Meta {
 
 type Routes = RouteRecordRaw & {
   meta?: Meta;
-  children: {
+  children?: {
     meta?: Meta;
   };
 };
 
-export const routes: Routes[] = [normalRoutes, musicRoutes];
+export const routes: Routes[] = [
+  { path: "/", redirect: "/discoverMusic" },
+  normalRoutes,
+  musicRoutes,
+];

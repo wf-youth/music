@@ -1,17 +1,19 @@
 const musicRoutes = {
-  path: "/music",
-  redirect: "/music/favorite",
+  path: "/favorite",
+  name: "Favorite",
+  redirect: "/favorite/artist",
   meta: {
-    title: "我的音乐",
+    title: "我的收藏",
+    icon: "Star",
+    cateName: "我的音乐",
   },
   children: [
     {
-      path: "/favorite",
+      path: "/favorite/artist",
       name: "Favorite",
-      component: () => import("../../pages/Favorite/index.vue"),
+      component: () => import("../../pages/Favorite/artist/index.vue"),
       meta: {
-        title: "我的收藏",
-        icon: "Star",
+        title: "歌手",
       },
     },
   ],
