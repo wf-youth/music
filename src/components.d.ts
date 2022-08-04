@@ -7,6 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ACarousel: typeof import('@arco-design/web-vue')['Carousel']
+    ACarouselItem: typeof import('@arco-design/web-vue')['CarouselItem']
     AImage: typeof import('@arco-design/web-vue')['Image']
     AInputSearch: typeof import('@arco-design/web-vue')['InputSearch']
     ALayout: typeof import('@arco-design/web-vue')['Layout']
