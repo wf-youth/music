@@ -5,7 +5,9 @@
       <back-button class="mr-3" />
     </div>
 
-    <div class="tabs-box">tabs</div>
+    <div class="tabs-box flex-1">
+      <header-tabs />
+    </div>
 
     <div class="search-box flex items-center">
       <search />
@@ -15,11 +17,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import logo from "./Logo.vue";
 import BackButton from "./BackButton.vue";
 import search from "./search.vue";
 import tools from "./tools.vue";
+import HeaderTabs from "./HeaderTabs.vue";
 </script>
 
 <style lang="less" scoped>

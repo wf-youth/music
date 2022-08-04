@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     AProgress: typeof import('@arco-design/web-vue')['Progress']
     ASpace: typeof import('@arco-design/web-vue')['Space']
     BackButton: typeof import('./components/Layout/components/layout-header/BackButton.vue')['default']
+    HeaderTabs: typeof import('./components/Layout/components/layout-header/HeaderTabs.vue')['default']
     Iconfont: typeof import('./components/Iconfont/index.vue')['default']
     IconPark: typeof import('./components/IconPark/index.vue')['default']
     Layout: typeof import('./components/Layout/index.vue')['default']
@@ -28,10 +29,12 @@ declare module '@vue/runtime-core' {
     Login: typeof import('./components/Layout/components/layout-sider/Login.vue')['default']
     LoginDialog: typeof import('./components/loginDialog/index.vue')['default']
     Logo: typeof import('./components/Layout/components/layout-header/Logo.vue')['default']
+    MusicTabs: typeof import('./components/MusicTabs/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Search: typeof import('./components/Layout/components/layout-header/search.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
+    TableTabs: typeof import('./components/Layout/components/layout-header/TableTabs.vue')['default']
     Tools: typeof import('./components/Layout/components/layout-header/tools.vue')['default']
   }
 }

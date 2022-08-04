@@ -13,3 +13,11 @@
   --music-border-theme: #a40011;
   --menu-width: 200px;
 }
+
+body {
+  --color-bg: #ededed;
+}
+
+body[arco-theme="dark"] {
+  --color-bg: #373739;
+}
