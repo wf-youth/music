@@ -1,13 +1,8 @@
-import request, { get } from '@/utils/http/axios'
+import  { get } from '@/utils/http/axios'
 
-export function login(data: object) {
-  const params: object = {
-    dispatch: 'loginByPhoneAndPwd',
-    os: 'app',
-    ...data,
-  }
+export function login() {
+
   return get({
-    url: `/m/AgentAction.do`,
-    params,
+    url: `/login/qr/key`
   })
 }

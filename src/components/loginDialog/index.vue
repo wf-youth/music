@@ -13,6 +13,7 @@
           @click="handleClose"
         />
       </template>
+      <!-- 二维码 -->
       <div style="text-align: center">
         <div class="text-xl mb-5">扫码登录</div>
         <img
@@ -34,12 +35,25 @@
           选择其他登录方式<icon-right />
         </div>
       </div>
+      <!-- 账号密码 -->
+      <div>
+        <!-- logo部分 -->
+
+        <!-- 账号密码部分 -->
+        <!-- 自动登录 -->
+        <!-- 登录按钮 -->
+        <!-- 注册 -->
+        <!-- 其他登录方式 -->
+        <!-- 各个同意服务条款 -->
+      </div>
     </a-modal>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { login } from "@/api/login/index";
+login();
 // 弹窗打开关闭
 let visible = $ref(false);
 // 点击关闭弹窗
