@@ -13,6 +13,7 @@ axios.defaults.headers.post["Access-Control-Allow-Origin-Type"] = "*";
 
 const axiosInstance: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_APP_API_BASE_URL + "",
+  withCredentials: true,
 });
 
 // axios实例拦截响应
