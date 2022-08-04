@@ -5,7 +5,7 @@
       <back-button class="mr-3" />
     </div>
 
-    <div class="tabs-box">
+    <div class="tabs-box flex-1">
       <header-tabs />
     </div>
 

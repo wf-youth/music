@@ -9,7 +9,7 @@ const normalRoutes = {
   },
   children: [
     {
-      path: "/discoverMusic/recommend",
+      path: "recommend",
       name: "recommend",
       component: () => import("../../pages/DiscoverMusic/recommend/index.vue"),
       meta: {
@@ -17,7 +17,7 @@ const normalRoutes = {
       },
     },
     {
-      path: "/discoverMusic/playList",
+      path: "playList",
       name: "playList",
       component: () => import("../../pages/DiscoverMusic/playList/index.vue"),
       meta: {

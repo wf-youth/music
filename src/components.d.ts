@@ -26,6 +26,7 @@ declare module '@vue/runtime-core' {
     LayoutSider: typeof import('./components/Layout/components/layout-sider/index.vue')['default']
     Login: typeof import('./components/Layout/components/layout-sider/Login.vue')['default']
     Logo: typeof import('./components/Layout/components/layout-header/Logo.vue')['default']
+    MusicTabs: typeof import('./components/MusicTabs/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Search: typeof import('./components/Layout/components/layout-header/search.vue')['default']
