@@ -11,7 +11,7 @@ const musicRoutes = {
       component: () => import("../../pages/Favorite/index.vue"),
       meta: {
         title: "我的收藏",
-        icon: "star",
+        icon: "Star",
       },
     },
   ],

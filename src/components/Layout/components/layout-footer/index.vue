@@ -32,7 +32,9 @@
         <like
           :theme="isLike ? 'filled' : 'outline'"
           size="22"
-          :fill="isLike ? ['#c24437'] : ['#333']"
+          :style="{
+            color: isLike ? 'var(--music-theme)' : 'var(--color-text-1)',
+          }"
           :strokeWidth="1"
           @click="handleLike"
         />
@@ -64,20 +66,20 @@
           :fill="['#c24437', '#c24437', '#FFF', '#fff']"
           :strokeWidth="1"
         />
-        <delete theme="outline" size="22" fill="#333" :strokeWidth="1" />
+        <delete theme="outline" size="22" :strokeWidth="1" />
       </div>
       <div class="flex justify-between items-center w-20">
-        <monitor-two theme="outline" size="17" fill="#333" :strokeWidth="1" />
+        <monitor-two theme="outline" size="17" :strokeWidth="1" />
         <div
           :style="{
-            color: is_show_word ? '#c24437' : '#000',
+            color: is_show_word ? 'var(--music-theme)' : '',
             userSelect: 'none',
           }"
           @click="handleWord"
         >
           词
         </div>
-        <volume-notice theme="outline" size="17" fill="#333" :strokeWidth="1" />
+        <volume-notice theme="outline" size="17" :strokeWidth="1" />
       </div>
     </div>
     <!-- 哎嘿嘿 这是底部 -->
