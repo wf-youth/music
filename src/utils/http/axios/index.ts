@@ -6,14 +6,13 @@ import { getToken, TokenPrefix } from "@/utils/auth";
 // 如果请求话费了超过 `timeout` 的时间，请求将被中断
 axios.defaults.timeout = 5000;
 // 表示跨域请求时是否需要使用凭证
-axios.defaults.withCredentials = false;
+axios.defaults.withCredentials = true;
 // axios.defaults.headers.common['token'] =  AUTH_TOKEN
 // 允许跨域
 axios.defaults.headers.post["Access-Control-Allow-Origin-Type"] = "*";
 
 const axiosInstance: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_APP_API_BASE_URL + "",
-  withCredentials: true,
 });
 
 // axios实例拦截响应
