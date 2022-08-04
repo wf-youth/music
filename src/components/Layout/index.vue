@@ -11,12 +11,12 @@
       <a-layout>
         <a-layout-sider
           :style="{
-            backgroundColor: 'var(--color-bg-4)',
+            backgroundColor: 'var(--color-bg)',
           }"
         >
           <layout-sider />
         </a-layout-sider>
-        <a-layout-content>
+        <a-layout-content class="p-5">
           <slot></slot>
         </a-layout-content>
       </a-layout>
