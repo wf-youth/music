@@ -34,7 +34,6 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     Search: typeof import('./components/Layout/components/layout-header/search.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
-    TableTabs: typeof import('./components/Layout/components/layout-header/TableTabs.vue')['default']
     Tools: typeof import('./components/Layout/components/layout-header/tools.vue')['default']
   }
 }
