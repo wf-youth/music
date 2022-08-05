@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AAvatar: typeof import('@arco-design/web-vue')['Avatar']
+    AButton: typeof import('@arco-design/web-vue')['Button']
     ACarousel: typeof import('@arco-design/web-vue')['Carousel']
     ACarouselItem: typeof import('@arco-design/web-vue')['CarouselItem']
     AImage: typeof import('@arco-design/web-vue')['Image']
