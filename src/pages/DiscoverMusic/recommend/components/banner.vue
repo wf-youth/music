@@ -1,7 +1,7 @@
 <template>
   <div class="banner">
     <a-carousel
-      :autoPlay="false"
+      autoPlay
       animation-name="card"
       indicator-position="outer"
       :style="{
