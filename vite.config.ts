@@ -49,7 +49,8 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       host: "0.0.0.0", // IP配置，支持从IP启动
       proxy: {
         "/api": {
-          target: "http://localhost:3000",
+          // target: "http://localhost:3000",
+          target: "https://netease-cloud-music-api-pearl-zeta.vercel.app/",
           changeOrigin: true,
           rewrite: (path: any) => path.replace(/^\/api/, ""),
         },
