@@ -148,16 +148,6 @@ defineExpose({
 .scan {
   opacity: 0;
 }
-.scan-code-box:hover {
-  .scan {
-    animation: scan 1s;
-    animation-fill-mode: forwards;
-  }
-  .code-box {
-    animation: code 1s;
-    animation-fill-mode: forwards;
-  }
-}
 
 .code-box {
   width: 250px;
@@ -165,27 +155,21 @@ defineExpose({
   transform: translateX(-50%);
 }
 
-@keyframes scan {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
+.scan,
+.code-box {
+  transition: all 0.3s linear;
+}
+.scan-code-box:hover {
+  .scan {
     opacity: 1;
     transform: translateX(-180px);
   }
-}
-
-@keyframes code {
-  0% {
-    width: 250px;
-  }
-
-  100% {
+  .code-box {
     width: 150px;
     transform: translateX(0px);
   }
 }
+
 .login-other {
   cursor: pointer;
   left: 50%;
