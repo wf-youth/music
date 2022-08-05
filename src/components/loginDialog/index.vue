@@ -21,7 +21,7 @@
           class="relative"
         >
           <div class="text-xl mb-5">扫码登录</div>
-          <div class="scan-code-box relative">
+          <div class="relative" :class="{ 'scan-code-box': isValid }">
             <!-- 背景图 -->
             <img
               class="scan absolute right-0"
@@ -43,20 +43,29 @@
                   show-loader
                 />
                 <!-- 蒙层(失效+刷新) -->
-                <div
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    opacity: 0.3;
-                    background-color: #000;
-                  "
-                  class="absolute top-0 text-black"
-                ></div>
+                <transition>
+                  <div v-if="!isValid">
+                    <div
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0.3;
+                        background-color: #000;
+                      "
+                      class="absolute top-0 text-black"
+                    ></div>
 
-                <div class="code_refresh absolute">
-                  <div class="font-black">二维码已失效</div>
-                  <a-button type="primary" shape="round">点击刷新</a-button>
-                </div>
+                    <div class="code_refresh absolute">
+                      <div class="text-white font-semibold">二维码已失效</div>
+                      <a-button
+                        type="primary"
+                        shape="round"
+                        @click="handleRefeesh"
+                        >点击刷新</a-button
+                      >
+                    </div>
+                  </div>
+                </transition>
               </div>
               <!-- 底部 -->
               <div class="mt-3 text-sm">
@@ -96,7 +105,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { qr_key, qr_create } from "@/api/login/index";
+import { qr_key, qr_create, qr_check } from "@/api/login/index";
 
 // 弹窗打开关闭
 let visible = $ref(false);
@@ -111,6 +120,10 @@ let codeImg = $ref("");
 async function showVisible() {
   // 打开弹框
   visible = true;
+  get_code();
+}
+// 处理获取二维码
+async function get_code() {
   //   获取key
   codeImg =
     "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ftva1.sinaimg.cn%2Flarge%2F006APoFYly1g8mf9qe5udg30jz0jzjtr.gif&refer=http%3A%2F%2Ftva1.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662261012&t=ade1bd238f25300f69afdaa381863368";
@@ -122,17 +135,38 @@ async function showVisible() {
     data: { qrimg },
   } = await qr_create(unikey);
   codeImg = qrimg;
+  isValid = true;
+  check_code(unikey);
 }
+// 二维码状态是否有效
+let isValid = $ref(true);
 // 轮询检测二维码状态
-let timer = ref();
-function check_code() {
-  timer.value = setInterval(async () => {}, 2000);
+let timer = $ref<any>();
+function check_code(key: string) {
+  timer = setInterval(async () => {
+    const { code } = await qr_check(key);
+    /**
+     * 800 为二维码过期
+     * 801 为等待扫码,
+     * 802 为待确认
+     * 803 为授权登录成功(803 状态码下会返回 cookies)
+     */
+    if (code === 800) {
+      isValid = false;
+      clearInterval(timer);
+    }
+  }, 2000);
+}
+// 点击刷新
+function handleRefeesh() {
+  get_code();
 }
 // 判断是否是二维码登录还是账号密码登录
 let loginCode = $ref(true);
 // 点击选择其他方式登录
 function handleOther() {
   loginCode = false;
+  clearInterval(timer);
 }
 defineExpose({
   showVisible,
@@ -179,5 +213,15 @@ defineExpose({
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
+}
+/* 下面我们会解释这些 class 是做什么的 */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

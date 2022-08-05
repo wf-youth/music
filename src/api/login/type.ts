@@ -18,3 +18,9 @@ interface CreateData {
   qrurl: string;
   qrimg: string;
 }
+
+export interface QrCheck {
+    code: number;
+    message: string;
+    cookie: string;
+  }
