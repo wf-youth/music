@@ -9,12 +9,14 @@
     <img class="code" src="../../../assets/images/code.png" alt="" /> -->
 
     <banner />
+    <recommend-playlist />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import banner from "./components/banner.vue";
+import recommendPlaylist from "./components/recommendPlaylist.vue";
 </script>
 
 <style lang="less" scoped>
