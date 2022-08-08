@@ -16,7 +16,7 @@
         >
           <layout-sider />
         </a-layout-sider>
-        <a-layout-content class="p-5">
+        <a-layout-content class="p-5 content overflow-y-scroll">
           <slot></slot>
         </a-layout-content>
       </a-layout>
@@ -37,4 +37,9 @@ import { ref } from "vue";
 // div {
 //   background-color: var(----color-bg-1);
 // }
+
+.content {
+  height: calc(100vh - 68px - 56px);
+  box-sizing: border-box;
+}
 </style>
