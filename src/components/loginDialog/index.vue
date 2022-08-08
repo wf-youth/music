@@ -214,7 +214,6 @@ defineExpose({
   left: 50%;
   transform: translateX(-50%);
 }
-/* 下面我们会解释这些 class 是做什么的 */
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;
