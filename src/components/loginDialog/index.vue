@@ -14,78 +14,9 @@
         />
       </template>
       <div style="height: 480px">
+        <code-login ref="codeRef" v-if="loginCode" @change="changeOther" />
         <!-- 二维码 -->
-        <div
-          style="text-align: center; height: 450px"
-          v-if="loginCode"
-          class="relative"
-        >
-          <div class="text-xl mb-5">扫码登录</div>
-          <div class="relative" :class="{ 'scan-code-box': isValid }">
-            <!-- 背景图 -->
-            <img
-              class="scan absolute right-0"
-              src="https://p5.music.126.net/obj/wo3DlcOGw6DClTvDisK1/9643571155/525c/faac/2dc6/fe695c03c7c358ddaa4651736b26a55f.png"
-              alt=""
-              height="150"
-              width="150"
-            />
-            <!-- 二维码+其他方式登录字体 -->
-            <div class="code-box absolute">
-              <div class="relative">
-                <!-- 二维码 -->
-                <a-image
-                  class="code"
-                  :src="codeImg"
-                  alt=""
-                  width="100%"
-                  style="margin: 0 auto"
-                  show-loader
-                />
-                <!-- 蒙层(失效+刷新) -->
-                <transition>
-                  <div v-if="!isValid">
-                    <div
-                      style="
-                        width: 100%;
-                        height: 100%;
-                        opacity: 0.3;
-                        background-color: #000;
-                      "
-                      class="absolute top-0 text-black"
-                    ></div>
 
-                    <div class="code_refresh absolute">
-                      <div class="text-white font-semibold">二维码已失效</div>
-                      <a-button
-                        type="primary"
-                        shape="round"
-                        @click="handleRefeesh"
-                        >点击刷新</a-button
-                      >
-                    </div>
-                  </div>
-                </transition>
-              </div>
-              <!-- 底部 -->
-              <div class="mt-3 text-sm">
-                使用<a
-                  style="color: rgb(51, 113, 188)"
-                  class=""
-                  :href="'https://music.163.com/#/download'"
-                  >网易云APP</a
-                >扫码登录
-              </div>
-            </div>
-          </div>
-          <div
-            class="login-other text-xs absolute bottom-2"
-            style="color: var(--color-text-4)"
-            @click="handleOther"
-          >
-            选择其他登录方式<icon-right />
-          </div>
-        </div>
         <!-- 账号密码 -->
         <div v-else>
           这是账号密码登录
@@ -104,123 +35,39 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { qr_key, qr_create, qr_check } from "@/api/login/index";
+import { ref, nextTick } from "vue";
 
 // 弹窗打开关闭
 let visible = $ref(false);
+// 判断是否是二维码登录还是账号密码登录
+let loginCode = $ref(true);
+// 二维码弹窗
+const codeRef = ref<any>(null);
+
 // 点击关闭弹窗
 function handleClose() {
   visible = false;
 }
-// 二维码base码
-let codeImg = $ref("");
 
 // 点击打开弹框
-async function showVisible() {
+function showVisible() {
   // 打开弹框
   visible = true;
-  get_code();
+  loginCode = true;
+
+  nextTick(() => {
+    codeRef.value && codeRef.value.handleRefresh();
+  });
 }
-// 处理获取二维码
-async function get_code() {
-  //   获取key
-  codeImg =
-    "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ftva1.sinaimg.cn%2Flarge%2F006APoFYly1g8mf9qe5udg30jz0jzjtr.gif&refer=http%3A%2F%2Ftva1.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662261012&t=ade1bd238f25300f69afdaa381863368";
-  const {
-    data: { unikey },
-  } = await qr_key();
-  //   通过key去获取base64码
-  const {
-    data: { qrimg },
-  } = await qr_create(unikey);
-  codeImg = qrimg;
-  isValid = true;
-  check_code(unikey);
+
+// 改变登录方式
+function changeOther() {
+  loginCode = !loginCode;
 }
-// 二维码状态是否有效
-let isValid = $ref(true);
-// 轮询检测二维码状态
-let timer = $ref<any>();
-function check_code(key: string) {
-  timer = setInterval(async () => {
-    const { code } = await qr_check(key);
-    /**
-     * 800 为二维码过期
-     * 801 为等待扫码,
-     * 802 为待确认
-     * 803 为授权登录成功(803 状态码下会返回 cookies)
-     */
-    if (code === 800) {
-      isValid = false;
-      clearInterval(timer);
-    }
-  }, 2000);
-}
-// 点击刷新
-function handleRefeesh() {
-  get_code();
-}
-// 判断是否是二维码登录还是账号密码登录
-let loginCode = $ref(true);
-// 点击选择其他方式登录
-function handleOther() {
-  loginCode = false;
-  clearInterval(timer);
-}
+
 defineExpose({
   showVisible,
 });
 </script>
 
-<style lang="less" scoped>
-.scan-code-box {
-  height: 300px;
-  width: 330px;
-  margin: 0 auto;
-}
-.scan {
-  opacity: 0;
-}
-
-.code-box {
-  width: 250px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.scan,
-.code-box {
-  transition: all 0.3s linear;
-}
-.scan-code-box:hover {
-  .scan {
-    opacity: 1;
-    transform: translateX(-180px);
-  }
-  .code-box {
-    width: 150px;
-    transform: translateX(0px);
-  }
-}
-
-.login-other {
-  cursor: pointer;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.code_refresh {
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
-</style>
+<style lang="less" scoped></style>

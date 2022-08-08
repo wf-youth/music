@@ -22,6 +22,7 @@ declare module '@vue/runtime-core' {
     AProgress: typeof import('@arco-design/web-vue')['Progress']
     ASpace: typeof import('@arco-design/web-vue')['Space']
     BackButton: typeof import('./components/Layout/components/layout-header/BackButton.vue')['default']
+    CodeLogin: typeof import('./components/loginDialog/code-login.vue')['default']
     HeaderTabs: typeof import('./components/Layout/components/layout-header/HeaderTabs.vue')['default']
     Iconfont: typeof import('./components/Iconfont/index.vue')['default']
     IconPark: typeof import('./components/IconPark/index.vue')['default']
