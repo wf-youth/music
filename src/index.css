@@ -16,8 +16,11 @@
 
 body {
   --color-bg: #ededed;
+
+  --color-bg-opacity: rgba(255, 255, 255, 0.5);
 }
 
 body[arco-theme="dark"] {
   --color-bg: #373739;
+  --color-bg-opacity: rgba(0, 0, 0, 0.5);
 }
